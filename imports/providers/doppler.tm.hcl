@@ -11,11 +11,11 @@ generate_hcl "_tmgen-provider-doppler.tf" {
     # lets grab the doppler token from aws secrets manager
     data "aws_secretsmanager_secret" "doppler" {
       name     = "doppler-admin"
-      provider = aws
+      provider = aws.infra
     }
     data "aws_secretsmanager_secret_version" "doppler" {
-      provider  = aws
       secret_id = data.aws_secretsmanager_secret.doppler.id
+      provider  = aws.infa
     }
     data "doppler_secrets" "this" {
       config  = "infra"

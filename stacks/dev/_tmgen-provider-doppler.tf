@@ -2,10 +2,10 @@
 
 data "aws_secretsmanager_secret" "doppler" {
   name     = "doppler-admin"
-  provider = aws
+  provider = aws.infra
 }
 data "aws_secretsmanager_secret_version" "doppler" {
-  provider  = aws
+  provider  = aws.infa
   secret_id = data.aws_secretsmanager_secret.doppler.id
 }
 data "doppler_secrets" "this" {
