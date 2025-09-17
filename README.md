@@ -62,10 +62,31 @@ terraform {
 }
 ```
 
+### Allow for dynamically generating default AWS Providers and aliased providers
 
+With the following configuration I can generate a default AWS provider for whatever account I'm in, and an aliased 
+provider for an "infra" account for where shared resources are stored (like the Doppler token).
 
+```hcl
+    provider "aws" {
+      alias  = "infra"
+      region = "us-east-1"
+      assume_role {
+        role_arn = global.envs["infra"].role_arn
+      }
+      default_tags {
+        tags = globals.tags
+      }
+    }
 
-
-## How it Works
-
-In each stack there is a stack.
+    provider "aws" {
+      region = "us-east-1"
+      assume_role {
+        role_arn = global.this.aws.role_arn
+      }
+      default_tags {
+        tags = globals.tags
+      }
+    }
+  }
+```
