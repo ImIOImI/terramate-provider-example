@@ -18,7 +18,7 @@ generate_hcl "_tmgen-provider-github.tf" {
     provider "github" {
       owner = "MyAwesomeOrg" # replace with your GitHub org or user name
       app_auth {
-        id              = "<ap id>"  #ID of GitHub App
+        id              = "<app id>"  #ID of GitHub App
         installation_id = "<installation id>" #Installation ID of GitHub App
         # This assumes a PEM file is stored in Doppler in the project:<project>, config:<config>
         # and the key is TOFU_ACCESS_TO_GITHUB_PEM
