@@ -21,8 +21,8 @@ generate_hcl "_tmgen-provider-github.tf" {
         id              = "<ap id>"  #ID of GitHub App
         installation_id = "<installation id>" #Installation ID of GitHub App
         # This assumes a PEM file is stored in Doppler in the project:<project>, config:<config>
-        # and the key is TOFU_ACCESS_TO_SUMER_GITHUB_PEM
-        pem_file        = data.doppler_secrets.gh_pem.map.TOFU_ACCESS_TO_SUMER_GITHUB_PEM
+        # and the key is TOFU_ACCESS_TO_GITHUB_PEM
+        pem_file        = data.doppler_secrets.gh_pem.map.TOFU_ACCESS_TO_GITHUB_PEM
       }
     }
   }

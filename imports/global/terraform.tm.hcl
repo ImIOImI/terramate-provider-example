@@ -24,7 +24,7 @@ generate_hcl "_tmgen-terraform.tf" {
 
       backend "s3" {
         region = tm_try(global.terraform.backend.region, "us-east-1")
-        bucket = tm_try(global.terraform.backend.bucket, "my-awesome-state")
+        bucket = tm_try(global.terraform.backend.bucket, "my-awesome-state-${global.this.env}")
         key     = "stacks/by-id/${terramate.stack.id}/terraform.tfstate"
         encrypt = true
         dynamodb_table = tm_try(global.terraform.backend.dynamo_table, "my-awesome-state-dynamo")

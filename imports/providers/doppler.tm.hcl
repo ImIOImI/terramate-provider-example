@@ -4,6 +4,7 @@ generate_hcl "_tmgen-provider-doppler.tf" {
   condition = tm_alltrue([
     !tm_contains(terramate.stack.tags, "nogen"),
     tm_contains(terramate.stack.tags, "provider-doppler"),
+    # listing provider-aws here to codify doppler's dependency on aws secrets manager for Doppler's token
     tm_contains(terramate.stack.tags, "provider-aws"),
   ])
 

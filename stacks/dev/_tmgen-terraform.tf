@@ -20,7 +20,7 @@ terraform {
     assume_role = {
       role_arn = "arn:aws:iam::111111111111:role/TerraformAdmin"
     }
-    bucket         = "my-awesome-state"
+    bucket         = "my-awesome-state-dev"
     dynamodb_table = "my-awesome-state-dynamo"
     encrypt        = true
     key            = "stacks/by-id/b5353669-68ac-44a9-a0c2-dbd388a52ccc/terraform.tfstate"
