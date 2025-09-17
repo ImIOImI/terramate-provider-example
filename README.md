@@ -5,6 +5,8 @@ providers that require more than just a simple provider block.
 
 ## Features
 
+Please note that everything with a `_tmgen` prefix is dynamically generated tofu code. Each stack is a code artifact.
+
 ### Dynamically generated provider with data sources it depends one
 
 When a stack has the tags `provider-doppler` and `provider-aws` we can automagically generate
