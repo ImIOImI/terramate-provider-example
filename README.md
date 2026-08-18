@@ -7,7 +7,7 @@ providers that require more than just a simple provider block.
 
 Please note that everything with a `_tmgen` prefix is dynamically generated tofu code. Each stack is a code artifact.
 
-### Dynamically generated provider with data sources it depends one
+### Dynamically generated provider with data sources it depends on
 
 When a stack has the tags `provider-doppler` and `provider-aws` we can automagically generate
 a doppler provider that uses a token stored in AWS Secrets Manager.
